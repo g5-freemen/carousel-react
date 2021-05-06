@@ -1,5 +1,5 @@
 export const settings = {
-    height: '80vh',
+    height: '80%',
     slidesToShow: 2,
     spaceBetweenSlides: 16,
     showDots: true,

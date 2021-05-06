@@ -8,8 +8,8 @@ import './style.css';
 export default function Carousel({children}) {
     const length = children.length;
     const [slideNum, setSlideNum] = useState(0);
+    const [swipe, setSwipe] = useState(null);
     let { height, slidesToShow, showDots, spaceBetweenSlides, showAuto, autoInterval } = settings;
-    let touchPoint;
 
     function setCarousel() {
         const carousel = document.querySelector('.carousel');
@@ -27,27 +27,28 @@ export default function Carousel({children}) {
     }
 
     function handleTouchStart(ev) {
-        touchPoint.style.left = ev.touches[0].pageX + 'px';
-        touchPoint.style.top = ev.touches[0].pageY + 'px';
-        touchPoint.style.display = 'flex';
+        setSwipe({ x0: ev.touches[0].pageX });
     }
     
     function handleTouchMove(ev) {
-        touchPoint.style.left = ev.touches[0].pageX  + 'px';
-        touchPoint.style.top = ev.touches[0].pageY + 'px';
+        setSwipe({ ...swipe, x: ev.touches[0].pageX })
     }
     
     function handleTouchEnd(ev) {
-        let item = ev.target.closest('.item');
-        if (item) item.scrollIntoView({block: 'center', inline: 'center', behavior: 'smooth'})
-        else console.log('miss');
-        touchPoint.style.display = 'none';
+        let diff = swipe.x0 - swipe.x;
+        let newSlideNum = slideNum;
+
+        if (Math.abs(diff) > window.innerWidth/14) {
+            if (diff < 0) newSlideNum--
+            else newSlideNum++;
+        } 
+        if (newSlideNum > length - 1) newSlideNum = length - 1
+        else if (newSlideNum < 0) newSlideNum = 0;
+
+        setSlideNum(newSlideNum)
     }
 
-    useEffect(() => {
-        touchPoint = document.querySelector('.touch');
-        setCarousel()
-    }, []);
+    useEffect(setCarousel, []);
 
     useEffect(() => {    
         window.addEventListener('resize', setCarousel)
