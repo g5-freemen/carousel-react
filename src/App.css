@@ -1,0 +1,17 @@
+.photo img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.iframe {
+    border: none;
+}
+
+.desc {
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.text {
+    font-size: .8rem;
+}
