@@ -174,7 +174,9 @@ body {
 }
 
 .carousel,
-.item, 
+.item,
+.prev-btn,
+.next-btn 
 .link {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;   /* Chrome/Safari/Opera */
