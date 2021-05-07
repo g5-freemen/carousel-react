@@ -26,7 +26,7 @@ Typically usage of this component looks like this:
   &lt;Carousel&gt;
 </pre>
 
-&lt;Item&gt; is a wrapper for HTML content and &lt;Carousel&gt; is a wrapper for the items (&lt;Item&lt;).
+&lt;Item&gt; is a wrapper for HTML content and &lt;Carousel&gt; is a wrapper for the items (&lt;Item&gt;).
 
 You can setup the carousel (ex. a number of slides on the screen, a gap between slides, auto slideshow, etc.)
 using _settings.js in components directory.  
@@ -43,10 +43,9 @@ The project uses the following scripts:
 
 ## 4. Technologies used
 
-Thechnology stack includes:
-
 * React
 * Webpack and Babel to set up the environment
 
 ## 5. Known issues
+
 * Active slide is not always correctly set after swipe
