@@ -39,7 +39,7 @@ export default function Carousel({children}) {
         let reverse = diff > 0 ? 1 : -1;
 
         const items = document.querySelectorAll('.item')
-        let x = document.documentElement.clientWidth / 2 + window.innerWidth / length * reverse;
+        let x = document.documentElement.clientWidth / 2 + window.innerWidth / slidesToShow * reverse;
         let y = document.documentElement.clientHeight / 2;
         let elem = document.elementFromPoint(x, y).closest('.item');
         for (let i = 0; i < items.length; i++) {
