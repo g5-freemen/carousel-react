@@ -11,7 +11,7 @@ export default function Auto(props) {
             btns.forEach(el => el.style.visibility = 'visible');
 
             const items = document.querySelectorAll('.item')
-            let x = document.documentElement.clientWidth / 2 + document.documentElement.clientWidth/10 * reverse;
+            let x = document.documentElement.clientWidth / 2 + spaceBetweenSlides * 2 * reverse;
             let y = document.documentElement.clientHeight / 2;
             let elem = document.elementFromPoint(x, y).closest('.item');
             for (let i = 0; i < items.length; i++) {

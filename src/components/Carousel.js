@@ -34,18 +34,20 @@ export default function Carousel({children}) {
         setSwipe({ ...swipe, x: ev.touches[0].pageX })
     }
     
-    function handleTouchEnd(ev) {
+    function handleTouchEnd() {
         let diff = swipe.x0 - swipe.x;
-        let newSlideNum = slideNum;
+        let reverse = diff > 0 ? 1 : -1;
 
-        if (Math.abs(diff) > window.innerWidth/14) {
-            if (diff < 0) newSlideNum--
-            else newSlideNum++;
-        } 
-        if (newSlideNum > length - 1) newSlideNum = length - 1
-        else if (newSlideNum < 0) newSlideNum = 0;
-
-        setSlideNum(newSlideNum)
+        const items = document.querySelectorAll('.item')
+        let x = document.documentElement.clientWidth / 2 + window.innerWidth / length * reverse;
+        let y = document.documentElement.clientHeight / 2;
+        let elem = document.elementFromPoint(x, y).closest('.item');
+        for (let i = 0; i < items.length; i++) {
+            if (items[i] === elem) {
+                setTimeout(() => setSlideNum(i), 333);
+                break;
+            }
+        }
     }
 
     useEffect(setCarousel, []);
@@ -63,6 +65,9 @@ export default function Carousel({children}) {
 
     return (
         <div className='wrapper'>
+            <a className="link" href="https://github.com/g5-freemen">
+                Made by Anton Borkovskij, 2021
+            </a>
             <p className='title'>Carousel (React)</p>
             <div    className='carousel'
                     onTouchStart={handleTouchStart}
@@ -81,10 +86,6 @@ export default function Carousel({children}) {
             { slidesToShow !== length && length && showDots &&
                 <Dots data={{length, slideNum, setSlideNum}} /> 
             }
-            <div className='touch' />
-            <a className="link" href="https://github.com/g5-freemen">
-                Made by Anton Borkovskij, 2021
-            </a>
         </div>
     )
 }
