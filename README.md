@@ -18,13 +18,15 @@ your browser's DevTools).*
 
 Typically usage of this component looks like this:
 
-  <Carousel>
-    <Item>
-      < any HTML content >
-    </Item>
-  <Carousel>
+<pre>
+  &lt;Carousel&gt;
+    &lt;Item&gt;
+      &lt; any HTML content &gt;
+    &lt;/Item&gt;
+  &lt;Carousel&gt;
+&lt;/pre&gt;
 
-<Item> is a wrapper for HTML content and <Carousel> is a wrapper for the items (<Item>).
+&lt;Item&gt; is a wrapper for HTML content and &lt;Carousel&gt; is a wrapper for the items (&lt;Item&lt;).
 
 You can setup the carousel (ex. a number of slides on the screen, a gap between slides, auto slideshow, etc.)
 using _settings.js in components directory.  
