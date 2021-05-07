@@ -24,7 +24,7 @@ Typically usage of this component looks like this:
       &lt; any HTML content &gt;
     &lt;/Item&gt;
   &lt;Carousel&gt;
-&lt;/pre&gt;
+</pre>
 
 &lt;Item&gt; is a wrapper for HTML content and &lt;Carousel&gt; is a wrapper for the items (&lt;Item&lt;).
 
