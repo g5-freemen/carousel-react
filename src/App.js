@@ -26,7 +26,7 @@ export default function App() {
             <Item>
                 <p className="photo">
                     <img 
-                        src="https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/day/19.jpg"
+                        src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg"
                         alt="Eifel Tower photo" 
                     />
                 </p>
@@ -41,7 +41,7 @@ export default function App() {
             <Item>
                 <p className="photo">
                     <img
-                        src="https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/day/03.jpg"
+                        src="https://img3.goodfon.ru/wallpaper/nbig/7/eb/seascape-sea-ocean-blue-beach.jpg"
                         alt="Sea photo" 
                     />
                 </p>
