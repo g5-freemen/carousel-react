@@ -1,191 +1,195 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .wrapper {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    max-width: 100vw;
-    height: 100vh;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background-color: #74EBD5;
-    background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
-    z-index: 1;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #74ebd5;
+  background-image: linear-gradient(90deg, #74ebd5 0%, #9face6 100%);
+  z-index: 1;
+}
+
+.wrapper * {
+  outline: none;
 }
 
 .title {
-    margin: 1rem auto;
-    font-family: "Mistral", "Calibri";
-    font-size: 5vmin;
-    font-weight: bold;
+  margin: 1rem auto;
+  font-family: "Mistral", "Calibri";
+  font-size: 5vmin;
+  font-weight: bold;
 }
-  
+
 .carousel {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
-  
+
 .carousel::-webkit-scrollbar {
-    height: 0;
+  height: 0;
 }
 
 .content {
-    margin: 0;
-    height: 100%;
-    display: grid;
-    grid-auto-flow: column;
-    margin: auto;
-  }
+  margin: 0;
+  height: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  margin: auto;
+}
 
 .item {
-    height: 100%;
-    margin:  0;
-    padding: .5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 3px ridge;
-    border-radius: 1rem;
-    box-sizing: border-box;
-    overflow: hidden;
-    background-image: linear-gradient(90deg, lightgray 0%, lightsteelblue 100%);   
-    transition: all .5s;
+  height: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px ridge;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-image: linear-gradient(90deg, lightgray 0%, lightsteelblue 100%);
+  transition: all 0.5s;
 }
 
 .prev-btn,
 .next-btn {
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    background: gray;
-    border: none;
-    border-radius: 50%;
-    font-size: 2rem;
-    z-index: 9;
-    opacity: .4;
-    cursor: pointer;
-    outline: none;
-    transform: translate(0, -50%);
-    transition: all 1s;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  background: gray;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  z-index: 9;
+  opacity: 0.4;
+  cursor: pointer;
+  outline: none;
+  transform: translateY(-50%);
+  transition: opacity 1s;
+  will-change: opacity;
 }
 
 .prev-btn {
-    left: 1rem;
+  left: 1rem;
 }
 
 .next-btn {
-    right: 1rem;
+  right: 1rem;
 }
 
 .prev-btn:hover,
 .next-btn:hover {
-    opacity: .9;
+  opacity: 0.9;
 }
 
 .auto-btn {
-    position: absolute;
-    top: 1%;
-    right: 1%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 2.5vmin;
-    font-family: Tahoma, serif;
-    text-transform: uppercase;
-    opacity: .7;
-    outline: none;
-    cursor: pointer;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 2.5vmin;
+  font-family: Tahoma, serif;
+  text-transform: uppercase;
+  opacity: 0.7;
+  outline: none;
+  cursor: pointer;
 }
 
 .auto-checkbox {
-    margin: 0 .3vmin 0 0;
-    width: 3vmin;
-    height: 3vmin;
-    outline: none;
-    cursor: pointer;
+  margin: 0 0.3vmin 0 0;
+  width: 3vmin;
+  height: 3vmin;
+  outline: none;
+  cursor: pointer;
 }
 
 .slider-dots {
-    position: absolute;
-    bottom: .7rem;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 5;
-    width: max-content;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    outline: none;
+  position: absolute;
+  bottom: 0.7rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 5;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .dot {
-    margin-right: 1vmax;
-    width: .8rem;
-    height: .8rem;
-    background-color: #9e8fb2;
-    background-image: linear-gradient(315deg, #9e8fb2 0%, #a7acd9 74%);
-    border-radius: 50%;
-    border: none;
-    opacity: .5;
-    cursor: pointer;
-    outline: none;
-    transition: all .4s ease;
+  margin-right: 1vmax;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #9e8fb2;
+  background-image: linear-gradient(315deg, #9e8fb2 0%, #a7acd9 74%);
+  border-radius: 50%;
+  border: none;
+  opacity: 0.5;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.5s ease;
 }
 
 .dot:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 .dot:hover {
-    transform: scale(1.25);
+  transform: scale(1.25);
 }
 
-.active {
-    opacity: 1;
-    transform: scale(1.4);
+.active,
+.active:hover {
+  opacity: 1;
+  transform: scale(1.4);
 }
 
 .link {
-    position: absolute;
-    bottom: .2rem;
-    right: .2rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: .6rem;
-    opacity: .6;
-    outline: none;
-    text-decoration: none;
-    transition: all 1.2s;
-    z-index: 0;
+  position: absolute;
+  bottom: 0.2rem;
+  right: 0.2rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 0.6rem;
+  opacity: 0.6;
+  outline: none;
+  text-decoration: none;
+  transition: all 1.2s;
+  z-index: 0;
 }
 
 .link:hover {
-    transform: rotateX(360deg);
+  transform: rotateX(360deg);
 }
 
 .carousel,
 .item,
 .prev-btn,
-.next-btn 
-.link {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* Internet Explorer/Edge */
-    user-select: none;           /* Non-prefixed version, currently
+.next-btn .link {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                                     not supported by any browser */
 }
